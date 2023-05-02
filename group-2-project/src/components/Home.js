@@ -13,25 +13,23 @@ function Home()  {
       <nav className='menu'>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">HOME</Link>
           </li>
           <li>
-            <Link to="/artworks">Artworks List</Link>
+            <Link to="/artworks">ARTWORKS</Link>
           </li>
           <li>
-            <Link to="/search">Search Artworks</Link>
+            <Link to="/search">SEARCH</Link>
           </li>
           <li>
-            <Link to="/ArtCard">Art</Link>
+            <Link to="/ArtCard">ART</Link>
           </li>
         </ul>
       </nav>
 
-      <header >
-        <h1></h1>
-        
+      <header >        
       </header>
-
+        
       <Routes>
         <Route exact path="/" />
         <Route path="/artworks" component={ArtworksList} />
