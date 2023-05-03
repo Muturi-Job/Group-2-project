@@ -1,13 +1,25 @@
 import React, { useEffect, useState } from "react";
+import ArtCard from "./ArtCard";
 
 function ArtworksList() {
   const [artworks, setArtworks] = useState([]);
+  const [selectedArtwork, setSelectedArtwork] = useState(null);
 
   useEffect(() => {
     fetch("https://api.artic.edu/api/v1/artworks")
       .then((res) => res.json())
-      .then((data) => setArtworks(data.data));
+      .then((data) => {
+        setArtworks(data.data);
+      });
   }, []);
+
+  const handleClick = (artwork) => {
+    fetch(`https://api.artic.edu/api/v1/artworks/${artwork.id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setSelectedArtwork(data.data);
+      });
+  };
 
   return (
     <div
@@ -52,13 +64,14 @@ function ArtworksList() {
               borderRadius: "5px",
               padding: "20px",
             }}
+            onClick={() => handleClick(artwork)}
           >
             {artwork.thumbnail && artwork.thumbnail.lqip && (
               <img
                 src={artwork.thumbnail.lqip}
                 alt={artwork.title}
                 className="artwork-thumbnail"
-                style={{ maxWidth: "100%", width:"400px",height:"400px"}}
+                style={{ maxWidth: "100%", width: "400px", height: "400px" }}
               />
             )}
             <h2
@@ -75,6 +88,7 @@ function ArtworksList() {
           </div>
         ))}
       </div>
+      {selectedArtwork && <ArtCard artworkId={selectedArtwork.id} />}
     </div>
   );
 }
