@@ -37,9 +37,9 @@ function Home()  {
         <Route path="/artworks" component={ArtworksList} />
         <Route path="/search" component={SearchArtworks} />
         <Route path="/artcard" component={ArtCard} />
-      {/* <ArtworksList />  */}
+      
       </Routes>
-     
+     {/* <ArtworksList />  */}
     </div>
     </Router>
   );
