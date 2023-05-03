@@ -132,6 +132,7 @@ return (
 <button onClick={toggleFavorites} style={{ margin: "10px" , backgroundColor:"yellow" , color: "black" }}> &#9733;
 {showFavorites ? "Back to Display of Artworks" : "Show Favorites"}
 </button>
+
 </div>
 <div style={{ display: "flex", flexWrap: "wrap" }}>
 {renderArtworks()}
