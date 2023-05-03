@@ -1,5 +1,4 @@
 import React, {useState,useEffect} from "react";
-import Search from "./Search";
 import ArtCard from "./ArtCard";
 
 function SearchArtWorks(){
@@ -28,7 +27,7 @@ function SearchArtWorks(){
             <input type="text" className="search" placeholder="Search artworks.."
             value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)} 
             />
-            <h1>hello</h1>
+        
             <div className="parent">
                 {
                     items.filter(item =>item.title.toLowerCase().includes(searchTerm.toLowerCase()))
