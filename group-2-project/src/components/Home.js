@@ -28,7 +28,7 @@ function Home()  {
       </nav>
 
       <header >
-        <h1></h1>
+        {/* <h1></h1> */}
         
       </header>
 
@@ -37,7 +37,9 @@ function Home()  {
         <Route path="/artworks" component={ArtworksList} />
         <Route path="/search" component={SearchArtworks} />
         <Route path="/artcard" component={ArtCard} />
+      {/* <ArtworksList />  */}
       </Routes>
+     
     </div>
     </Router>
   );

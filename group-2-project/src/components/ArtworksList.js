@@ -58,7 +58,7 @@ function ArtworksList() {
                 src={artwork.thumbnail.lqip}
                 alt={artwork.title}
                 className="artwork-thumbnail"
-                style={{ maxWidth: "100%" }}
+                style={{ maxWidth: "100%", width:"400px",height:"400px"}}
               />
             )}
             <h2
