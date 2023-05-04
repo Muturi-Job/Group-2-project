@@ -1,52 +1,52 @@
 import React, { useState, useEffect } from "react";
-import ArtCard from "./ArtCard";
-import "./ArtCard.css";
+import ImageCard from "./ImageCard";
+import Search from "./Search";
+import "./Search.css";
 
-function SearchArtwork() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [artworks, setArtworks] = useState([]);
-  const [selectedArtworkId, setSelectedArtworkId] = useState(null);
+function SearchArtWorks() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [IDs, setIDs] = useState([]);
+  const [items, setItems] = useState([]);
+  
 
   useEffect(() => {
-    handleSearch();
-  }, [searchQuery]);
+    fetch("https://api.artic.edu/api/v1/artworks/search?q=painting&limit=100")
+      .then((data) => data.json())
+      .then((artworks) =>
+        setIDs(artworks.data.map((item) => item.id))
+      )
+      .catch((err) => console.log(err));
+  }, []);
 
-  const handleSearch = () => {
-    fetch(
-      `https://api.artic.edu/api/v1/artworks/search?q=${searchQuery}&limit=100`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setArtworks(data.data);
-      });
-  };
-
-  const handleArtworkClick = (artworkId) => {
-    setSelectedArtworkId(artworkId);
-  };
+  useEffect(() => {
+    IDs.forEach((id) => {
+      fetch(`https://api.artic.edu/api/v1/artworks/${id}`)
+        .then((data) => data.json())
+        .then((item) =>
+          setItems((prevItem) => [...prevItem, item.data])
+        )
+        .catch((err) => console.log(err));
+    });
+  }, [IDs]);
 
   return (
-    <div>
-      <input
-        type="text"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
-
-      <ul>
-        {artworks.map((artwork) => (
-          <li key={artwork.id}>
-            <button onClick={() => handleArtworkClick(artwork.id)}>
-              {artwork.title}
-            </button>
-          </li>
-        ))}
-      </ul>
-
-      {selectedArtworkId && <ArtCard artworkId={selectedArtworkId} />}
+    <div className="container">
+      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <div className="parent">
+        {items
+          .filter((item) =>
+            item.title.toLowerCase().includes(searchTerm.toLowerCase())
+          )
+          .map((item, i) => (
+            <ImageCard
+              key={i}
+              item={item}
+           />
+          ))}
+      </div>
+     
     </div>
   );
 }
 
-export default SearchArtwork;
+export default SearchArtWorks;
