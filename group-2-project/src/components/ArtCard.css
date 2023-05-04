@@ -55,4 +55,15 @@
   .art-card-category {
     font-size: 12px;
   }
-  
+  label{
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .art-card-details-container{
+white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50000px;
+  }

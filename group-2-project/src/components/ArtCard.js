@@ -57,11 +57,17 @@ function ArtCard({ artworkId }) {
               />
             </div>
             <div className="art-card-details-container" style={{ flex: "1" }}>
+              <label>Title</label>
               <h2 className="art-card-title">{artwork.title}</h2>
+              <label>Artist</label>
               <p className="art-card-artist">{artwork.artist_display}</p>
+              <label>Place of origin</label>
               <p className="art-card-origin">{artwork.place_of_origin}</p>
+              <label>Credit Line</label>
               <p className="art-card-credit">{artwork.credit_line}</p>
+              <label>Publication History</label>
               <p className="art-card-publication">{artwork.publication_history}</p>
+              <label>Category</label>
               <p className="art-card-category">{artwork.category_titles}</p>
             </div>
           </div>
