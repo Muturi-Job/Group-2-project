@@ -9,8 +9,8 @@ const router = createBrowserRouter(
     <Route path="/" element={<RootLayout />}>
     <Route path="/" element={<Home />} />
     <Route path="artworks" element={<ArtworksList />} />
-    <Route path="/search" element={<SearchArtwork />} />
-    
+    <Route path="search" element={<SearchArtwork />} />
+    {/*Route path='favourties' element={<Favourites />}/>  */}
   </Route>
   )
 )
