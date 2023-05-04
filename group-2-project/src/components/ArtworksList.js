@@ -4,7 +4,6 @@ function ArtworksList() {
   const [artworks, setArtworks] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [showFavorites, setShowFavorites] = useState(false);
-
   useEffect(() => {
     fetch("https://api.artic.edu/api/v1/artworks")
       .then((res) => res.json())
@@ -12,23 +11,20 @@ function ArtworksList() {
         setArtworks(data.data);
       });
   }, []);
-
   const handleAddToFavorites = (artwork) => {
     setFavorites([...favorites, artwork]);
   };
-
   const handleRemoveFromFavorites = (artwork) => {
-    setFavorites(favorites.filter((favArtwork) => favArtwork.id !== artwork.id));
+    setFavorites(
+      favorites.filter((favArtwork) => favArtwork.id !== artwork.id)
+    );
   };
-
   const isArtworkInFavorites = (artwork) => {
     return favorites.some((favArtwork) => favArtwork.id === artwork.id);
   };
-
   const toggleFavorites = () => {
     setShowFavorites(!showFavorites);
   };
-
   const renderArtwork = (artwork) => {
     return (
       <div
@@ -46,7 +42,7 @@ function ArtworksList() {
           cursor: "pointer",
           maxWidth: "100%",
           margin: "10px",
-          width: "calc(100% / 3 - 20px)"
+          width: "calc(100% / 3 - 20px)",
         }}
       >
         {artwork.image_id && (
@@ -97,52 +93,58 @@ function ArtworksList() {
         {isArtworkInFavorites(artwork) ? (
           <button
             onClick={() => handleRemoveFromFavorites(artwork)}
-            style={{ backgroundColor: "#ff9800", color: "#fff", padding: "10px", borderRadius: "5px", border: "none", cursor: "pointer" }}
+            style={{
+              backgroundColor: "#FF9800",
+              color: "#fff",
+              padding: "10px",
+              borderRadius: "5px",
+              border: "none",
+              cursor: "pointer",
+            }}
           >
             Remove from favorites
           </button>
         ) : (
           <button
             onClick={() => handleAddToFavorites(artwork)}
-            style={{ backgroundColor: "#2196f3", color: "#fff", padding
-
-
-
-: "10px", borderRadius: "5px", border: "none", cursor: "pointer" }}
->
-   &#9733;
-Add to favorites
-</button>
-)}
-</div>
-);
-};
-
-const renderArtworks = () => {
-const artworksToRender = showFavorites ? favorites : artworks;
-return artworksToRender.map((artwork) => renderArtwork(artwork));
-};
-
-return (
-<div>
-<h1 style={{ textAlign: "center" }}>
-{showFavorites ? "Favorites" : "Artworks"}
-</h1>
-<div style={{ display: "flex", justifyContent: "center" }}>
-<button onClick={toggleFavorites} style={{ margin: "10px" , backgroundColor:"yellow" , color: "black" }}> &#9733;
-{showFavorites ? "Back to Display of Artworks" : "Show Favorites"}
-</button>
-
-</div>
-<div style={{ display: "flex", flexWrap: "wrap" }}>
-{renderArtworks()}
-</div>
-</div>
-);
+            style={{
+              backgroundColor: "#2196F3",
+              color: "#fff",
+              padding: "10px",
+              borderRadius: "5px",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            &#9733; Add to favorites
+          </button>
+        )}
+      </div>
+    );
+  };
+  const renderArtworks = () => {
+    const artworksToRender = showFavorites ? favorites : artworks;
+    return artworksToRender.map((artwork) => renderArtwork(artwork));
+  };
+  return (
+    <div>
+      <h1 style={{ textAlign: "center" }}>
+        {showFavorites ? "Favorites" : "Artworks"}
+      </h1>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <button
+          onClick={toggleFavorites}
+          style={{ margin: "10px", backgroundColor: "yellow", color: "black" }}
+        >
+          {" "}
+          &#9733;
+          {showFavorites ? "Back to Display of Artworks" : "Show Favorites"}
+        </button>
+      </div>
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {renderArtworks()}
+      </div>
+    </div>
+  );
 }
-
 export default ArtworksList;
-
-
-
-
