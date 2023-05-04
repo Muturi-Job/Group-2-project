@@ -1,44 +1,52 @@
-import React, {useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import ArtCard from "./ArtCard";
+import "./ArtCard.css";
 
-function SearchArtWorks(){
-    const [searchTerm, setSearchTerm] = useState("");
-    const [IDs, setIDs] = useState([])
-    const [items, setItems] = useState([]);
+function SearchArtwork() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [artworks, setArtworks] = useState([]);
+  const [selectedArtworkId, setSelectedArtworkId] = useState(null);
 
-    useEffect(()=>{
-        fetch('https://api.artic.edu/api/v1/artworks/search?q=painting&limit=100')
-        .then(data => data.json())
-        .then(artworks => setIDs(artworks.data.map(item => item.id)))
-        .catch(err=> console.log(err))
-    
-    },[])
-    useEffect(()=>{
-        IDs.map(id =>
-            fetch(`https://api.artic.edu/api/v1/artworks/${id}`)
-            .then(data =>data.json())
-            .then(item => setItems((prevItem => [...prevItem,item.data])))
-            .catch(err => console.log(err))
-            )
-    },[IDs])
+  useEffect(() => {
+    handleSearch();
+  }, [searchQuery]);
 
-    return(
-        <div>
-            <input type="text" className="search" placeholder="Search artworks.."
-            value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)} 
-            />
-            <h1>hello</h1>
-            <div className="parent">
-                {
-                    items.filter(item =>item.title.toLowerCase().includes(searchTerm.toLowerCase()))
-                    .map((item, index) => 
-                    <ArtCard key= {index} item={item} />
-                    )
-                }
-            </div>
-        </div>
+  const handleSearch = () => {
+    fetch(
+      `https://api.artic.edu/api/v1/artworks/search?q=${searchQuery}&limit=100`
     )
-  
-       
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setArtworks(data.data);
+      });
+  };
+
+  const handleArtworkClick = (artworkId) => {
+    setSelectedArtworkId(artworkId);
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+
+      <ul>
+        {artworks.map((artwork) => (
+          <li key={artwork.id}>
+            <button onClick={() => handleArtworkClick(artwork.id)}>
+              {artwork.title}
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      {selectedArtworkId && <ArtCard artworkId={selectedArtworkId} />}
+    </div>
+  );
 }
-export default SearchArtWorks;
+
+export default SearchArtwork;
