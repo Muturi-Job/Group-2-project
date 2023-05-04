@@ -15,7 +15,7 @@ const ImageCard = ({ item, onClick }) => {
         <img
           src={`https://www.artic.edu/iiif/2/${item.image_id}/full/843,/0/default.jpg`}
           className="gallery__img"
-          alt="خىث"
+          alt="gallery"
         />
       </a>
     </div>
