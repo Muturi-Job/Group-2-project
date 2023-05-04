@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 function ArtworksList() {
   const [artworks, setArtworks] = useState([]);
   const [favorites, setFavorites] = useState([]);
