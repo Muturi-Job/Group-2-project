@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import './ArtworksList.css';
+
 function ArtworksList() {
   const [artworks, setArtworks] = useState([]);
   const [favorites, setFavorites] = useState([]);
@@ -26,95 +28,34 @@ function ArtworksList() {
   };
   const renderArtwork = (artwork) => {
     return (
-      <div
-        key={artwork.id}
-        className="artwork-card"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          backgroundColor: "#fff",
-          borderRadius: "5px",
-          padding: "20px",
-          boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
-          transition: "transform 0.2s ease-in-out",
-          cursor: "pointer",
-          maxWidth: "100%",
-          margin: "10px",
-          width: "calc(100% / 3 - 20px)",
-        }}
-      >
+      <div key={artwork.id}  className="artwork-card" >
         {artwork.image_id && (
           <img
             src={`https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`}
             alt={artwork.title}
             className="artwork-thumbnail"
-            style={{ width: "100%", height: "auto", marginBottom: "20px" }}
+           
           />
         )}
-        <h2
-          className="artwork-title"
-          style={{
-            fontSize: "1.4rem",
-            fontWeight: "bold",
-            marginBottom: "10px",
-            textAlign: "center",
-          }}
-        >
+        <h2 className="artwork-title"  >
           {artwork.title}
         </h2>
         {artwork.artist_title && (
-          <p
-            className="artwork-artist"
-            style={{
-              fontSize: "1rem",
-              fontWeight: "normal",
-              marginBottom: "10px",
-              textAlign: "center",
-            }}
-          >
+          <p  className="artwork-artist" >
             {artwork.artist_title}
           </p>
         )}
         {artwork.date_display && (
-          <p
-            className="artwork-date"
-            style={{
-              fontSize: "0.9rem",
-              fontWeight: "normal",
-              marginBottom: "10px",
-              textAlign: "center",
-            }}
-          >
+          <p  className="artwork-date"     >
             {artwork.date_display}
           </p>
         )}
         {isArtworkInFavorites(artwork) ? (
-          <button
-            onClick={() => handleRemoveFromFavorites(artwork)}
-            style={{
-              backgroundColor: "#FF9800",
-              color: "#fff",
-              padding: "10px",
-              borderRadius: "5px",
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
+          <button className="remove-favourites-button" onClick={() => handleRemoveFromFavorites(artwork)}     >
             Remove from favorites
           </button>
         ) : (
-          <button
-            onClick={() => handleAddToFavorites(artwork)}
-            style={{
-              backgroundColor: "#2196F3",
-              color: "#fff",
-              padding: "10px",
-              borderRadius: "5px",
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
+          <button className="add-favourites-button"  onClick={() => handleAddToFavorites(artwork)}  >
             &#9733; Add to favorites
           </button>
         )}
