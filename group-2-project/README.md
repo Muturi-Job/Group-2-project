@@ -8,29 +8,30 @@ To run this app on your local machine, you will need to have [Node.js] installed
 Once you have [Node.js] installed, follow these steps:
 
 1. Clone this repository to your local machine using Git:
-
 git clone https://github.com/Muturi-Job/Group-2-project
+
 2. Navigate to the project directory:
-
-cd artworks-list
+`cd artworks-list`
 3. Install the project dependencies:
-
-npm install
+`npm install`
 4. Start the development server:
+`npm start`
 
-npm start
 5. Open http://localhost:3000 in your web browser to view the app.
-
 # Technologies
 The following technologies were used to develop this app:
-
+<ul>
 <p >
   <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React" width="40" height="40"/>
+<p>React</p>
   <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="Node.js" width="40" height="40"/>
+<p>Node.js</p>
   <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="HTML" width="40" height="40"/>
+<p>HTML</p>
   <img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg" alt="CSS" width="40" height="40"/>
+<p>CSS</p>
 </p>
-
+</ul>
 # Usage
 When you first open the app, there is a home page that displays some of the artworks retrieved from the Art Institute of Chicago API. After navigating to the "ARTWORKS" page, you can click on an artwork to view more information about it, including its title, artist, and date.
 
