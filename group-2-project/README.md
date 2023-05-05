@@ -1,70 +1,56 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ART MUSEUMS
+Artworks List is a React app that displays a list of artworks retrieved from the [Art Institute of Chicago API]. Users can view information about each artwork, add them to a favorites list, and remove them from the list.
 
-## Available Scripts
+# Installation
+To run this app on your local machine, you will need to have [Node.js] installed. You can download it from the official website or use a package manager like Homebrew to install it on [macOS].
 
-In the project directory, you can run:
+Once you have [Node.js] installed, follow these steps:
 
-### `npm start`
+1. Clone this repository to your local machine using Git:
+git clone https://github.com/Muturi-Job/Group-2-project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Navigate to the project directory:
+`cd artworks-list`
+3. Install the project dependencies:
+`npm install`
+4. Start the development server:
+`npm start`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+5. Open http://localhost:3000 in your web browser to view the app.
+# Technologies
+The following technologies were used to develop this app:
+<ul>
+<p >
+  <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React" width="40" height="40"/>
+<p>React</p>
+  <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="Node.js" width="40" height="40"/>
+<p>Node.js</p>
+  <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="HTML" width="40" height="40"/>
+<p>HTML</p>
+  <img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg" alt="CSS" width="40" height="40"/>
+<p>CSS</p>
+</p>
+</ul>
+# Usage
+When you first open the app, there is a home page that displays some of the artworks retrieved from the Art Institute of Chicago API. After navigating to the "ARTWORKS" page, you can click on an artwork to view more information about it, including its title, artist, and date.
 
-### `npm test`
+To add an artwork to your favorites list, click the "Add to favorites" button. To remove an artwork from your favorites list, click the "Remove from favorites" button.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can toggle between the list of all artworks and your favorites list by clicking the "Show Favorites" button. When you are viewing your favorites list, you can click the "Back to Display of Artworks" button to return to the list of all artworks.
 
-### `npm run build`
+You can also navigate to the "SEARCH" page to search for an artwork in the Art Institute of Chicago library. When you hover over an artwork card, you will be able to see its title and the name of the artist.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Contributing
+If you would like to contribute to this project, you can fork the repository and make changes to your fork. When you are ready to submit your changes, create a pull request and describe the changes you have made.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ # Authors
+This project was created by:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Job Muturi (https://github.com/Muturi-Job)
+2. Elizabeth Kerubo (https://github.com/elizabethkerubo02)
+3. Mark Mwendwa (https://github.com/mwendwamark)
+4. Serah Njenga (https://github.com/Serah-Njenga)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# License
+This project is licensed under the MIT License. You are free to use, modify, and distribute this code as you see fit.
