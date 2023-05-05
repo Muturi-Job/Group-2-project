@@ -1,34 +1,55 @@
-Art Museum  is a collaborative ReactJS project.
 
+# ART MUSEUMS
+Artworks List is a React app that displays a list of artworks retrieved from the [Art Institute of Chicago API]. Users can view information about each artwork, add them to a favorites list, and remove them from the list.
 
-Features
-The following features are implemented in the Art Museum  project:
+# Installation
+To run this app on your local machine, you will need to have [Node.js] installed. You can download it from the official website or use a package manager like Homebrew to install it on [macOS].
 
-SearchArtwork: Users can search for any artwork
-ArtWorkList: Users can see detailed information about all the Art collection
-ArtCard: Users can see detailed description of all the arts being displayed 
+Once you have [Node.js] installed, follow these steps:
 
-Technologies
-The following technologies are used in the Art Museaum project:
+1. Clone this repository to your local machine using Git:
 
-Frontend: ReactJS, HTML, CSS.
+git clone https://github.com/Muturi-Job/Group-2-project
+2. Navigate to the project directory:
 
-APIs:  Art Institute of Chicago API
-floppy_disk Installation Guide
-Clone the repo https://github.com/Muturi-Job/Group-2-project
-Run npm install in the command line
-Run npm run dev to power up a local server
-Open http://localhost:3000 to view it in the browsers.
-Run npm start to view your website
+cd artworks-list
+3. Install the project dependencies:
 
+npm install
+4. Start the development server:
 
-Contributors
-The following contributors have worked on the Art Museum project:
+npm start
+5. Open http://localhost:3000 in your web browser to view the app.
 
-Job
-Mark
-Elizabeth
-Serah
+# Technologies
+The following technologies were used to develop this app:
 
-License
-This project is licensed under the MIT License. Please see the LICENSE file for more details.
+<p >
+  <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React" width="40" height="40"/>
+  <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="Node.js" width="40" height="40"/>
+  <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="HTML" width="40" height="40"/>
+  <img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg" alt="CSS" width="40" height="40"/>
+</p>
+
+# Usage
+When you first open the app, there is a home page that displays some of the artworks retrieved from the Art Institute of Chicago API. After navigating to the "ARTWORKS" page, you can click on an artwork to view more information about it, including its title, artist, and date.
+
+To add an artwork to your favorites list, click the "Add to favorites" button. To remove an artwork from your favorites list, click the "Remove from favorites" button.
+
+You can toggle between the list of all artworks and your favorites list by clicking the "Show Favorites" button. When you are viewing your favorites list, you can click the "Back to Display of Artworks" button to return to the list of all artworks.
+
+You can also navigate to the "SEARCH" page to search for an artwork in the Art Institute of Chicago library. When you hover over an artwork card, you will be able to see its title and the name of the artist.
+
+# Contributing
+If you would like to contribute to this project, you can fork the repository and make changes to your fork. When you are ready to submit your changes, create a pull request and describe the changes you have made.
+
+ # Authors
+This project was created by:
+
+1. Job Muturi (https://github.com/Muturi-Job)
+2. Elizabeth Kerubo (https://github.com/elizabethkerubo02)
+3. Mark Mwendwa (https://github.com/mwendwamark)
+4. Serah Njenga (https://github.com/Serah-Njenga)
+
+# License
+This project is licensed under the MIT License. You are free to use, modify, and distribute this code as you see fit.
